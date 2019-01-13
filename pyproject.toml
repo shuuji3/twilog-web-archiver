@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "twilog-web-archiver"
+version = "0.1.1"
+description = "Save month list pages of twilog.org by using archive.org."
+authors = ["TAKAHASHI Shuuji <shuuji3@gmail.com>"]
+
+license = 'GPL-3.0-or-later'
+
+readme = 'README.rst'
+
+repository = 'https://github.com/shuuji3/twilog-web-archiver'
+homepage = 'https://github.com/shuuji3/twilog-web-archiver'
+
+keywords = ['twilog', 'twitter', 'archive']
+
+[tool.poetry.scripts]
+twilog-web-archiver = "twilog_web_archiver.main:main"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+bs4 = "^0.0.1"
+click = "^7.0"
+requests = "^2.21"
+savepagenow = "^0.0.12"
+lxml = "^4.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

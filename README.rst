@@ -27,4 +27,9 @@ Description
 
 When a user has registered twilog.org, you will see the month list page in the user archive page, i.e. `https://twilog.org/NHK_PR/archives <https://twilog.org/NHK_PR/archives>`_.
 
-This program saves every month list pages in this archive page into Wayback Machine on archive.org.
+This program saves every pages in this month list into Wayback Machine on `archive.org <archive.org>`_.
+
+License
+-------
+
+- `GNU GPL 3.0 or later <LICENSE>`_

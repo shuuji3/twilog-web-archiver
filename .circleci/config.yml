@@ -27,7 +27,7 @@ jobs:
       # coverage
       - run:
           command: |
-            poetry run coverage run -m pytest
+            poetry run coverage run --source=twilog_web_archiver/ -m pytest
             poetry run coverage report
             poetry run coverage html
       - store_artifacts:

@@ -24,9 +24,11 @@ jobs:
           path: test-reports/
       - store_artifacts:
           path: test-reports/
-          destination: test-reports
       # coverage
-      - run: poetry run coverage run -m pytest
+      - run:
+          command: |
+            poetry run coverage run -m pytest
+            poetry run coverage report
+            poetry run coverage html
       - store_artifacts:
-          path: .coverage
-          destination: .coverage
+          path: htmlcov/

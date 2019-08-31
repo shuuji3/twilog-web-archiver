@@ -1,7 +1,10 @@
 twilog-web-archiver
 ===================
 
-Save month list pages of twilog.org by using archive.org.
+.. image:: https://circleci.com/gh/shuuji3/twilog-web-archiver.svg?style=svg
+    :target: https://circleci.com/gh/shuuji3/twilog-web-archiver
+
+Save month list pages of twilog.org using archive.org.
 
 Requirement
 -----------

@@ -6,19 +6,20 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: python-deps-{{ .Branch }}-{{ checksum "poetry.lock" }}
-      - run:
-          command: |
-            poetry install
+          keys:
+            - v1-twilog-web-archiver-deps-{{ .Branch }}-{{ checksum "poetry.lock" }}
+            - v1-twilog-web-archiver-deps-
+      - run: poetry install
       - save_cache:
-          key: python-deps-{{ .Branch }}-{{ checksum "poetry.lock" }}
+          key: v1-twilog-web-archiver-deps-{{ .Branch }}-{{ checksum "poetry.lock" }}
           paths:
             - "/home/circleci/.cache/pypoetry/virtualenvs"
       - run:
           command: |
-            poetry run pytest
+            mkdir test-reports
+            poetry run pytest --junitxml=test-reports/junit.xml
       - store_test_results:
-          path: test-results
+          path: test-reports
       - store_artifacts:
-          path: test-results
-          destination: tr1
+          path: test-reports
+          destination: test-reports

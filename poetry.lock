@@ -229,15 +229,14 @@ description = "A simple Python wrapper for archive.org's \"Save Page Now\" captu
 name = "savepagenow"
 optional = false
 python-versions = "*"
-version = "0.0.13"
+version = "1.0.1"
 
 [package.dependencies]
 click = "*"
 requests = ">=2.20.0"
-six = "*"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
 optional = false
@@ -285,7 +284,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "58e71a8c8ddc566b97d9a38f0849835c92575b7920845901c4ae3cf4ab25e6a4"
+content-hash = "aa8340db22ef25a53e0e1104c10506a9994abd8917ba043c24c9004250c24cc4"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -424,8 +423,8 @@ requests = [
     {file = "requests-2.24.0.tar.gz", hash = "sha256:b3559a131db72c33ee969480840fff4bb6dd111de7dd27c8ee1f820f4f00231b"},
 ]
 savepagenow = [
-    {file = "savepagenow-0.0.13-py2.py3-none-any.whl", hash = "sha256:445ace4f0c6fea4c74df26e4c91f7f5d04bffbc94e30d8593ff07f9b8b57e26b"},
-    {file = "savepagenow-0.0.13.tar.gz", hash = "sha256:553f21518b1aff933aeb00bad5cfc35a2060d7c9e12a6cfe22ae3dc9591cfd40"},
+    {file = "savepagenow-1.0.1-py2.py3-none-any.whl", hash = "sha256:68bf11df1b71554bd889e3068fbc70f32f658bc12918a0fefa062c302a0f1dfd"},
+    {file = "savepagenow-1.0.1.tar.gz", hash = "sha256:5da911ec11866335b2e8d89ceec5260b88431932cf40077ad59b3404dc5b8134"},
 ]
 six = [
     {file = "six-1.12.0-py2.py3-none-any.whl", hash = "sha256:3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c"},

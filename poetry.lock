@@ -99,8 +99,9 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.8"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Read metadata from Python packages"
+marker = "python_version < \"3.8\""
 name = "importlib-metadata"
 optional = false
 python-versions = ">=2.7,!=3.0,!=3.1,!=3.2,!=3.3"
@@ -158,15 +159,17 @@ pyparsing = ">=2.0.2"
 six = "*"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "plugin and hook calling mechanisms for python"
 name = "pluggy"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "0.12.0"
+version = "0.13.1"
 
 [package.dependencies]
-importlib-metadata = ">=0.12"
+[package.dependencies.importlib-metadata]
+python = "<3.8"
+version = ">=0.12"
 
 [package.extras]
 dev = ["pre-commit", "tox"]
@@ -281,8 +284,9 @@ secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "cer
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
+marker = "python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=2.7"
@@ -293,7 +297,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "7b1d2f0e383ec2126a1d400e39e07f12f047cb4bc26c6ac4d4286fe95ab837dc"
+content-hash = "09378fb97476df078822c853a6e800283ea94b52e931105c5e3076a33e0b456a"
 lock-version = "1.0"
 python-versions = "^3.6"
 
@@ -421,8 +425,8 @@ packaging = [
     {file = "packaging-19.0.tar.gz", hash = "sha256:0c98a5d0be38ed775798ece1b9727178c4469d9c3b4ada66e8e6b7849f8732af"},
 ]
 pluggy = [
-    {file = "pluggy-0.12.0-py2.py3-none-any.whl", hash = "sha256:b9817417e95936bf75d85d3f8767f7df6cdde751fc40aed3bb3074cbcb77757c"},
-    {file = "pluggy-0.12.0.tar.gz", hash = "sha256:0825a152ac059776623854c1543d65a4ad408eb3d33ee114dff91e57ec6ae6fc"},
+    {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
+    {file = "pluggy-0.13.1.tar.gz", hash = "sha256:15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"},
 ]
 py = [
     {file = "py-1.9.0-py2.py3-none-any.whl", hash = "sha256:366389d1db726cd2fcfc79732e75410e5fe4d31db13692115529d34069a043c2"},

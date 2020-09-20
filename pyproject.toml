@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "twilog-web-archiver"
-version = "0.1.1"
+version = "0.1.2"
 description = "Save month list pages of twilog.org by using archive.org."
 authors = ["TAKAHASHI Shuuji <shuuji3@gmail.com>"]
 

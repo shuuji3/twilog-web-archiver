@@ -21,7 +21,7 @@ python = "^3.6"
 bs4 = "^0.0.1"
 click = "^7.0"
 requests = "^2.21"
-savepagenow = ">=0.0.12,<1.1.1"
+savepagenow = ">=0.0.12,<1.1.2"
 lxml = "^4.3"
 pluggy = "^0.13.1"
 

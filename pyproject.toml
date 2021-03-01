@@ -27,7 +27,7 @@ pluggy = "^0.13.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.1"
-coverage = "^5.3"
+coverage = "^5.5"
 
 [build-system]
 requires = ["poetry>=0.12"]

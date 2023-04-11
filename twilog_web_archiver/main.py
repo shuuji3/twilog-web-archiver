@@ -29,6 +29,7 @@ def get_soup(url: str) -> BeautifulSoup:
 
 def archive_month_pages(month_link: str) -> None:
     """Archive all the pages of the month list."""
+    print(f'archiving: {month_link}')
     try:
         save_api = WaybackMachineSaveAPI(month_link)
         archive_url = save_api.archive_url

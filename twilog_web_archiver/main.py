@@ -1,3 +1,4 @@
+import time
 from typing import List
 
 from bs4 import BeautifulSoup
@@ -29,15 +30,17 @@ def get_soup(url: str) -> BeautifulSoup:
 
 def archive_month_pages(month_link: str) -> None:
     """Archive all the pages of the month list."""
-    print(f'archiving: {month_link}')
     try:
+        print(f'archiving: {month_link}')
         save_api = WaybackMachineSaveAPI(month_link)
         archive_url = save_api.archive_url
         cached = save_api.cached_save
         print(f'archived (cached: {cached}): {archive_url}')
+        time.sleep(15)
     except MaximumSaveRetriesExceeded as e:
         print('⚠ failed to archive the page:')
         print(e)
+        time.sleep(60 * 5)
 
     s = get_soup(month_link)
     next_links = s.select('.nav-next a')

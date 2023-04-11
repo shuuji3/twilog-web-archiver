@@ -47,7 +47,7 @@ def archive_month_pages(month_link: str) -> None:
 @click.command()
 @click.argument('screen_name')
 def archive_user_page(screen_name):
-    """Archvie all month list pages for the specified screen_name into Wayback Machine."""
+    """Archive all month list pages for the specified screen_name into Wayback Machine."""
     month_links = get_month_links(screen_name)
     for month_link in month_links:
         archive_month_pages(month_link)

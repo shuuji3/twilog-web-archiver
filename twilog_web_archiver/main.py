@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import click
 import requests
 from waybackpy import WaybackMachineSaveAPI
+from waybackpy.exceptions import MaximumSaveRetriesExceeded
 
 
 def get_month_links(screen_name: str) -> List[str]:

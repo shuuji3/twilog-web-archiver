@@ -6,21 +6,33 @@ Save month list pages of twilog.org using archive.org.
 Requirement
 -----------
 
-- :code:`Python >= 3.6`
+- :code:`Python >= 3.9`
 
 Install
 -------
 
 .. code-block:: bash
 
-    $ pip install twilog-web-archiver
+    pip install twilog-web-archiver
 
 Usage
 -----
 
 .. code-block:: bash
 
-    $ twilog-web-archiver SCREEN_NAME
+    twilog-web-archiver SCREEN_NAME
+
+Example output
+--------------
+
+.. code-block:: bash
+
+    twilog-web-archiver nhk_pr
+    archived (cached: True): https://web.archive.org/web/20230411042930/https://twilog.org/NHK_PR/month-2304
+    archived (cached: True): https://web.archive.org/web/20230411051906/https://twilog.org/NHK_PR/month-2303
+    archived (cached: False): https://web.archive.org/web/20230411051956/https://twilog.org/NHK_PR/month-2303/2
+    archived (cached: False): https://web.archive.org/web/20230411052032/https://twilog.org/NHK_PR/month-2303/3
+    ...
 
 Description
 -----------

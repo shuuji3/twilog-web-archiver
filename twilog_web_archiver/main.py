@@ -26,7 +26,7 @@ def get_soup(url: str) -> BeautifulSoup:
     return BeautifulSoup(r.text, 'lxml')
 
 
-def parse_month(month_link: str) -> None:
+def archive_month_pages(month_link: str) -> None:
     """Archive all the pages of the month list."""
     try:
         save_api = WaybackMachineSaveAPI(month_link)
@@ -41,7 +41,7 @@ def parse_month(month_link: str) -> None:
     next_links = s.select('.nav-next a')
     if len(next_links) != 0:
         next_link = next_links[0]['href']
-        parse_month(next_link)
+        archive_month_pages(next_link)
 
 
 @click.command()
@@ -50,7 +50,7 @@ def archive_user_page(screen_name):
     """Archvie all month list pages for the specified screen_name into Wayback Machine."""
     month_links = get_month_links(screen_name)
     for month_link in month_links:
-        parse_month(month_link)
+        archive_month_pages(month_link)
 
 
 def main():

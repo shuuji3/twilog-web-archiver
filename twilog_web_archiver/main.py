@@ -3,7 +3,7 @@ from typing import List
 from bs4 import BeautifulSoup
 import click
 import requests
-import savepagenow
+from waybackpy import WaybackMachineSaveAPI
 
 
 def get_month_links(screen_name: str) -> List[str]:
@@ -11,7 +11,13 @@ def get_month_links(screen_name: str) -> List[str]:
     url = f'https://twilog.org/{screen_name}/archives'
     s = get_soup(url)
     return list(
-        filter(lambda x: 'month-' in x, map(lambda x: x['href'], s.select('section.main-list-box1 .side-list li a'))))
+        filter(
+            lambda x: 'month-' in x,
+            map(
+                lambda x: x['href'], s.select('section.main-list-box1 .side-list li a')
+            ),
+        )
+    )
 
 
 def get_soup(url: str) -> BeautifulSoup:
@@ -22,8 +28,15 @@ def get_soup(url: str) -> BeautifulSoup:
 
 def parse_month(month_link: str) -> None:
     """Archive all the pages of the month list."""
-    archive_url, _ = savepagenow.capture_or_cache(month_link)
-    print('archived:', archive_url)
+    try:
+        save_api = WaybackMachineSaveAPI(month_link)
+        archive_url = save_api.archive_url
+        cached = save_api.cached_save
+        print(f'archived (cached: {cached}): {archive_url}')
+    except MaximumSaveRetriesExceeded as e:
+        print('⚠ failed to archive the page:')
+        print(e)
+
     s = get_soup(month_link)
     next_links = s.select('.nav-next a')
     if len(next_links) != 0:

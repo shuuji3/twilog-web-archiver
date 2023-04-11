@@ -32,7 +32,7 @@ def archive_month_pages(month_link: str) -> None:
     """Archive all the pages of the month list."""
     try:
         print(f'archiving: {month_link}')
-        save_api = WaybackMachineSaveAPI(month_link)
+        save_api = WaybackMachineSaveAPI(month_link, user_agent='twilog-web-archiver')
         archive_url = save_api.archive_url
         cached = save_api.cached_save
         print(f'archived (cached: {cached}): {archive_url}')

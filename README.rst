@@ -1,3 +1,5 @@
+⚠ This library will no longer be updated.
+
 twilog-web-archiver
 ===================
 
